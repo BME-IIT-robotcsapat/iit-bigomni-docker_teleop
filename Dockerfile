@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 	rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
-COPY big_omni_ros2ws ros2_ws
+COPY ros2_ws ros2_ws
 #SHELL ["/bin/bash","-c"]
 RUN . /opt/ros/foxy/setup.sh && \
 	cd ros2_ws && \
