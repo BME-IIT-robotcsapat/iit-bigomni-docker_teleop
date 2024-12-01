@@ -11,7 +11,7 @@ This is required, because the robot runs on ROS2 Foxy. With this image, teleoper
    sudo apt update && sudo apt upgrade
    ```
 3. Install docker and git
-4. ```bash
+   ```bash
    sudo apt install -y docker.io git
    ```
 5. Prepare workspace
@@ -29,20 +29,25 @@ This is required, because the robot runs on ROS2 Foxy. With this image, teleoper
    chmod +x ./build_image.bash
    chmod +x ./run_container.bash
    ```
-
-# Usage
-1. Connect to desired network
-2. Build docker image (only required once, or if git repos are updated)
+8. Build docker image (run this again, if source code is updated)
    ```bash
    ./build_image.bash
    ```
-3. Run docker container
+
+# Usage
+1. Connect to the same network as the robot
+2. Start `control_client` node *on the robot* (e..: through SSH)
+   ```bash
+   ros2 run bigomni_control control_client
+   ```
+3. In a new terminal run docker container
    ```bash
    ./run_container.bash
    ```
-
-For details, analyze the script files.
-
+   
 The script expects the joystick on the `/dev/input/event6` location, if ROS2 cannot connect to it, check in file system and modify script file accordingly.
 
 If teleop package is updated, clone/pull changes with git and rebuild the docker image.
+
+For more details, analyze the script files.
+
