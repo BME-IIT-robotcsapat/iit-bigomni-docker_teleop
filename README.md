@@ -36,7 +36,7 @@ This is required, because the robot runs on ROS2 Foxy. With this image, teleoper
 
 # Usage
 1. Connect to the same network as the robot
-2. Start `control_client` node *on the robot* (e..: through SSH)
+2. Start `control_client` node *on the robot* (e.g.: through SSH)
    ```bash
    ros2 run bigomni_control control_client
    ```
